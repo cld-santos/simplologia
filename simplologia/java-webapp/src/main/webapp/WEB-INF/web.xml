@@ -1,6 +1,29 @@
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
-    <welcome-file-list>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+     version="2.5">
+
+   <context-param>
+       <param-name>contextConfigLocation</param-name>
+       <param-value>classpath:applicationContext.xml</param-value>
+   </context-param>
+
+   <listener>
+          <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+   </listener>
+
+   <listener>
+          <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+   </listener>
+
+   <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
-    </welcome-file-list>
+   </welcome-file-list>
+
+   <servlet> 
+       <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+   </servlet>
+
 </web-app>
