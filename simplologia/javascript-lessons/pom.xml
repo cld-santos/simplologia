@@ -13,7 +13,7 @@
 		<finalName>javascript-lessons</finalName>
 		<plugins>
 
-<!-- 			<plugin>
+			<plugin>
 				<groupId>com.github.searls</groupId>
 				<artifactId>jasmine-maven-plugin</artifactId>
 				<version>1.2.0.0</version>
@@ -32,19 +32,23 @@
 						<source>src/main/webapp/js/lib/underscore.js</source>
 						<source>src/main/webapp/js/lib/backbone-0.9.2.js</source>
 						<source>src/main/webapp/js/lib/sinon-1.4.2.js</source>
-
-
 						<source>src/main/webapp/js/model/Produto.js</source>
-						<source>src/main/webapp/js/model/Usuario.js</source>
-
-						<source>src/main/webapp/js/view/Usuarios.js</source>
 						<source>src/main/webapp/js/view/Produtos.js</source>
-						<source>src/main/webapp/js/Main.js</source>
+						<source>src/main/webapp/js/model/Usuario.js</source>
+						<source>src/main/webapp/js/view/Usuarios.js</source>
+						<source>src/main/webapp/js/Roteador.js</source>
+						
+<!-- 					
+						
+						<source>src/main/webapp/js/utils.js</source>
+						<source>src/main/webapp/js/Main.js</source>  -->
+						
 					</preloadSources>
+					
 					<browserVersion>FIREFOX_3</browserVersion>
 				</configuration>
 			</plugin>
- -->
+
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
