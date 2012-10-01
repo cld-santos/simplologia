@@ -8,3 +8,150 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY com.android.ide.eclipse.ddms 4 0 2012-09-29 16:12:46.380
 !MESSAGE DDMS files not found: C:\csantos\Apps\eclipse\platform-tools\adb.exe C:\csantos\Apps\eclipse\tools\hprof-conv.exe C:\csantos\Apps\eclipse\tools\traceview.bat 
+
+!ENTRY org.eclipse.wst.xml.core 4 4 2012-09-29 16:48:31.591
+!MESSAGE exception locating element declaration for artifactId/artifactId@[288, 300] (<artifactId>)@[318, 331] (</artifactId>)
+!STACK 0
+java.util.EmptyStackException
+	at java.util.Stack.peek(Stack.java:102)
+	at java.util.Stack.pop(Stack.java:84)
+	at org.eclipse.wst.xml.core.internal.document.ElementImpl.getDefaultValue(ElementImpl.java:395)
+	at org.eclipse.wst.xml.core.internal.document.ElementImpl.getAttributeNode(ElementImpl.java:271)
+	at org.eclipse.wst.xml.core.internal.document.ElementImpl.getAttribute(ElementImpl.java:249)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.XMLAssociationProvider.getDerivedCMElementDeclaration(XMLAssociationProvider.java:381)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.XMLAssociationProvider.getCMElementDeclaration(XMLAssociationProvider.java:358)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.XMLAssociationProvider.getCMElementDeclaration(XMLAssociationProvider.java:223)
+	at org.maven.ide.eclipse.editor.xml.PomModelHandler$PomModelQueryAssociationProvider.getCMElementDeclaration(PomModelHandler.java:109)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.ModelQueryImpl.getCMElementDeclaration(ModelQueryImpl.java:116)
+	at org.eclipse.wst.xml.ui.internal.spelling.SpellcheckDelegateAdapterFactory$XMLSpellcheckDelegate.shouldSpellcheck(SpellcheckDelegateAdapterFactory.java:64)
+	at org.eclipse.wst.sse.ui.internal.spelling.SpellcheckStrategy.shouldSpellcheck(SpellcheckStrategy.java:409)
+	at org.eclipse.wst.sse.ui.internal.spelling.SpellcheckStrategy.isInterestingProblem(SpellcheckStrategy.java:239)
+	at org.eclipse.wst.sse.ui.internal.spelling.SpellcheckStrategy$SpellingProblemCollector.accept(SpellcheckStrategy.java:83)
+	at org.eclipse.jdt.internal.ui.text.spelling.SpellingEngine$SpellEventListener.handle(SpellingEngine.java:74)
+	at org.eclipse.jdt.internal.ui.text.spelling.engine.DefaultSpellChecker.execute(DefaultSpellChecker.java:258)
+	at org.eclipse.jdt.internal.ui.text.spelling.TextSpellingEngine.check(TextSpellingEngine.java:41)
+	at org.eclipse.jdt.internal.ui.text.spelling.SpellingEngine.check(SpellingEngine.java:90)
+	at org.eclipse.jdt.internal.ui.text.spelling.DefaultSpellingEngine.check(DefaultSpellingEngine.java:75)
+	at org.eclipse.ui.texteditor.spelling.SpellingService$1.run(SpellingService.java:104)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.texteditor.spelling.SpellingService.check(SpellingService.java:109)
+	at org.eclipse.wst.sse.ui.internal.spelling.SpellcheckStrategy.spellCheck(SpellcheckStrategy.java:327)
+	at org.eclipse.wst.sse.ui.internal.spelling.SpellcheckStrategy.reconcile(SpellcheckStrategy.java:370)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.endProcessing(DocumentRegionProcessor.java:132)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:702)
+
+!ENTRY org.eclipse.ui 4 4 2012-09-29 16:48:36.974
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenamePomAction
+
+!ENTRY org.eclipse.ui 4 4 2012-09-29 16:48:45.617
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenamePomAction
+
+!ENTRY org.eclipse.ui 4 4 2012-09-29 16:48:57.582
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenamePomAction
+
+!ENTRY org.eclipse.ui 4 4 2012-09-29 16:49:08.939
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenamePomAction
+
+!ENTRY org.eclipse.core.resources 4 2 2012-10-01 08:44:31.214
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.egit.core.Activator.getPluginId(Activator.java:72)
+	at org.eclipse.egit.core.Activator$AutoShareProjects.doAutoShare(Activator.java:201)
+	at org.eclipse.egit.core.Activator$AutoShareProjects.access$0(Activator.java:199)
+	at org.eclipse.egit.core.Activator$AutoShareProjects$1.visit(Activator.java:215)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at org.eclipse.egit.core.Activator$AutoShareProjects.resourceChanged(Activator.java:211)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
+	at org.eclipse.core.internal.resources.Marker.delete(Marker.java:71)
+	at org.eclipse.debug.core.model.Breakpoint.delete(Breakpoint.java:117)
+	at org.eclipse.wst.jsdt.debug.internal.core.JavaScriptPreferencesManager.stop(JavaScriptPreferencesManager.java:113)
+	at org.eclipse.wst.jsdt.debug.internal.core.JavaScriptDebugPlugin.stop(JavaScriptDebugPlugin.java:187)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$2.run(BundleContextImpl.java:771)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(BundleContextImpl.java:764)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(BundleHost.java:510)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:565)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1161)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.decFWSL(StartLevelManager.java:595)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:257)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.shutdown(StartLevelManager.java:215)
+	at org.eclipse.osgi.framework.internal.core.InternalSystemBundle.suspend(InternalSystemBundle.java:284)
+	at org.eclipse.osgi.framework.internal.core.Framework.shutdown(Framework.java:691)
+	at org.eclipse.osgi.framework.internal.core.Framework.close(Framework.java:598)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(EclipseStarter.java:390)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+!SESSION 2012-10-01 10:15:52.492 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_03
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.maven.ide.eclipse 4 0 2012-10-01 10:17:23.536
+!MESSAGE Unable to update index for nexus|http://localhost:8080/nexus-2.0.3/content/repositories/public/
+!STACK 0
+java.io.IOException: Foi forçado o cancelamento de uma conexão existente pelo host remoto
+	at org.maven.ide.eclipse.internal.index.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:181)
+	at org.maven.ide.eclipse.internal.index.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:188)
+	at java.io.PipedInputStream.read(PipedInputStream.java:378)
+	at java.io.InputStream.read(InputStream.java:101)
+	at java.util.Properties$LineReader.readLine(Properties.java:434)
+	at java.util.Properties.load0(Properties.java:353)
+	at java.util.Properties.load(Properties.java:341)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:498)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:74)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:780)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:954)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:138)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1072)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateIndex(NexusIndexManager.java:1025)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager$1.run(NexusIndexManager.java:632)
+	at org.maven.ide.eclipse.internal.index.IndexUpdaterJob.run(IndexUpdaterJob.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.IOException: Foi forçado o cancelamento de uma conexão existente pelo host remoto
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:218)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:186)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:359)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:322)
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:281)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:201)
+	at org.jboss.netty.util.internal.IoWorkerRunnable.run(IoWorkerRunnable.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.ui 4 4 2012-10-01 11:01:12.691
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenameProjectAction
+
+!ENTRY org.eclipse.ui 4 4 2012-10-01 11:01:12.953
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenameProjectAction
+
+!ENTRY org.eclipse.ui 4 4 2012-10-01 11:21:03.233
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenameProjectAction
+
+!ENTRY org.eclipse.ui 4 4 2012-10-01 11:32:05.462
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenameProjectAction
+
+!ENTRY org.eclipse.ui 4 4 2012-10-01 11:32:06.016
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenameProjectAction
+
+!ENTRY org.eclipse.ui 4 4 2012-10-01 11:32:26.166
+!MESSAGE Plug-in 'org.maven.ide.eclipse.refactoring' contributed an invalid Menu Extension (Path: 'org.eclipse.jdt.ui.refactoring.menu' is invalid): org.maven.ide.eclipse.editor.RenameProjectAction
