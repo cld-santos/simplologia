@@ -1,3 +1,2 @@
-Primeiro arquivo a commitar
+Este repositório é dedicado a estudos de tecnologias, frameworks e linguagens.
 
-Claudio Santos
