@@ -1,6 +1,0 @@
-INDEX VERSION 1.122+C:\csantos\Projetos\Simplologia\srcCode\simplologia\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1433801398.index
-2858050014.index
-530407719.index
-3988515266.index
-2424115022.index
