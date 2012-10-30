@@ -33,7 +33,7 @@
   <!-- The default servlet for all web applications, that serves static     -->
   <!-- resources.  It processes all requests that are not mapped to other   -->
   <!-- servlets with servlet mappings (defined either here or in your own   -->
-  <!-- web.xml file).  This servlet supports the following initialization   -->
+  <!-- web.xml file.  This servlet supports the following initialization    -->
   <!-- parameters (default values are in square brackets):                  -->
   <!--                                                                      -->
   <!--   debug               Debugging detail level for messages logged     -->
@@ -58,7 +58,7 @@
   <!--                       commands like PUT and DELETE are               -->
   <!--                       rejected?  [true]                              -->
   <!--                                                                      -->
-  <!--   readmeFile          File to display together with the directory    -->
+  <!--   readmeFile          File name to display with the directory        -->
   <!--                       contents. [null]                               -->
   <!--                                                                      -->
   <!--   sendfileSize        If the connector used supports sendfile, this  -->
@@ -188,10 +188,6 @@
   <!--                       this limit. A value of zero or less indicates  -->
   <!--                       no limit. [-1]                                 -->
   <!--                                                                      -->
-  <!--   jspIdleTimeout      The amount of time in seconds a JSP can be     -->
-  <!--                       idle before it is unloaded. A value of zero    -->
-  <!--                       or less indicates never unload. [-1]           -->
-  <!--                                                                      -->
   <!--   modificationTestInterval                                           -->
   <!--                       Causes a JSP (and its dependent files) to not  -->
   <!--                       be checked for modification during the         -->
@@ -220,7 +216,7 @@
   <!--                       actions or directives be trimmed?  [false]     -->
   <!--                                                                      -->
   <!--   xpoweredBy          Determines whether X-Powered-By response       -->
-  <!--                       header is added by generated servlet.  [false] -->
+  <!--                       header is added by generated servlet  [false]  -->
 
     <servlet>
         <servlet-name>jsp</servlet-name>
@@ -356,7 +352,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- The mappings for the JSP servlet -->
+    <!-- The mapping for the JSP servlet -->
     <servlet-mapping>
         <servlet-name>jsp</servlet-name>
         <url-pattern>*.jsp</url-pattern>
@@ -694,7 +690,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>mathml</extension>
-        <mime-type>application/mathml+xml</mime-type>
+        <mime-type>application/mathml+xml</mime-type> 
     </mime-mapping>
     <mime-mapping>
         <extension>me</extension>
@@ -819,7 +815,7 @@
     </mime-mapping>
     <mime-mapping>
         <!-- OpenDocument Drawing Template -->
-        <extension>otg</extension>
+        <extension>otg </extension>
         <mime-type>application/vnd.oasis.opendocument.graphics-template</mime-type>
     </mime-mapping>
     <mime-mapping>
@@ -835,7 +831,7 @@
     <mime-mapping>
         <!-- OpenDocument Spreadsheet Template -->
         <extension>ots</extension>
-        <mime-type>application/vnd.oasis.opendocument.spreadsheet-template</mime-type>
+        <mime-type>application/vnd.oasis.opendocument.spreadsheet-template </mime-type>
     </mime-mapping>
     <mime-mapping>
         <!-- OpenDocument Text Template -->
@@ -1189,17 +1185,15 @@
 
   <!-- ==================== Default Welcome File List ===================== -->
   <!-- When a request URI refers to a directory, the default servlet looks  -->
-  <!-- for a "welcome file" within that directory and, if present, to the   -->
-  <!-- corresponding resource URI for display.                              -->
-  <!-- If no welcome files are present, the default servlet either serves a -->
-  <!-- directory listing (see default servlet configuration on how to       -->
-  <!-- customize) or returns a 404 status, depending on the value of the    -->
-  <!-- listings setting.                                                    -->
+  <!-- for a "welcome file" within that directory and, if present,          -->
+  <!-- to the corresponding resource URI for display.  If no welcome file   -->
+  <!-- is present, the default servlet either serves a directory listing,   -->
+  <!-- or returns a 404 status, depending on how it is configured.          -->
   <!--                                                                      -->
   <!-- If you define welcome files in your own application's web.xml        -->
   <!-- deployment descriptor, that list *replaces* the list configured      -->
-  <!-- here, so be sure to include any of the default values that you wish  -->
-  <!-- to use within your application.                                       -->
+  <!-- here, so be sure that you include any of the default values that     -->
+  <!-- you wish to include.                                                 -->
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
