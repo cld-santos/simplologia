@@ -37,14 +37,11 @@
 						<source>src/main/webapp/js/model/Usuario.js</source>
 						<source>src/main/webapp/js/view/Usuarios.js</source>
 						<source>src/main/webapp/js/Roteador.js</source>
-						
-<!-- 					
-						
-						<source>src/main/webapp/js/utils.js</source>
-						<source>src/main/webapp/js/Main.js</source>  -->
-						
+
+						<!-- <source>src/main/webapp/js/utils.js</source> <source>src/main/webapp/js/Main.js</source> -->
+
 					</preloadSources>
-					
+
 					<browserVersion>FIREFOX_3</browserVersion>
 				</configuration>
 			</plugin>
@@ -60,6 +57,48 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sql-maven-plugin</artifactId>
+				<version>1.5</version>
+
+				<dependencies>
+					<!-- specify the dependent jdbc driver here -->
+					<dependency>
+						<groupId>postgresql</groupId>
+						<artifactId>postgresql</artifactId>
+						<version>8.4-702.jdbc4</version>
+					</dependency>
+				</dependencies>
+
+				<!-- common configuration shared by all executions -->
+				<configuration>
+					<driver>org.postgresql.Driver</driver>
+					<url>jdbc:postgresql://localhost:5432/main</url>
+					<username>jslessons</username>
+					<password>jslessons</password>
+				</configuration>
+
+				<executions>
+
+					<execution>
+						<id>create-schema</id>
+						<phase>process-test-resources</phase>
+						<goals>
+							<goal>execute</goal>
+						</goals>
+						<configuration>
+							<autocommit>true</autocommit>
+							<srcFiles>
+								<srcFile>src/sql/script-criacao.sql</srcFile>
+							</srcFiles>
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 
@@ -74,6 +113,12 @@
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-json</artifactId>
 			<version>${jersey.version}</version>
+
+		</dependency>
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>8.4-702.jdbc4</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -87,11 +132,9 @@
 			<version>${jersey.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0.3</version>
-		</dependency>
+
+		<!-- <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> 
+			<version>11.2.0.3</version> </dependency> -->
 	</dependencies>
 
 	<properties>
