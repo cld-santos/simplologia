@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="./js/lib/OpenLayers.js"></script>
+<script type="text/javascript">
+	var map;
+	var layer;
+
+	function init() {
+		var mapOptions = {
+			projection : "EPSG:3857"
+		};
+		
+		map = new OpenLayers.Map('map', mapOptions);
+		
+		layer = new OpenLayers.Layer.ArcGIS93Rest("ArcGIS Server Layer",
+				"http://geops-01/ArcGIS/rest/services/setur/base/MapServer/export",{layers: "show:55,54,56,53"});
+		
+		map.addLayer(layer);
+
+		map.addControl(new OpenLayers.Control.MousePosition());
+
+		map.zoomToExtent(new OpenLayers.Bounds(-5190379, -1796575, -4153282, -967387));
+	}
+</script>
+</head>
+<body onload="init()">
+	<div id="map"></div>
+</body>
+</html>
