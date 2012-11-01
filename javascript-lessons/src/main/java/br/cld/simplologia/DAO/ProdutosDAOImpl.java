@@ -59,9 +59,9 @@ public class ProdutosDAOImpl implements ProdutosDAO {
 
 		ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
 
-		String scriptSQL = "select * from ( select row_number() over (order by id_pk) RN, "
-				+ "ID_PK, NOME, PRECO_UNITARIO, INGREDIENTES, DESCRICAO "
-				+ "from produtos) " + "where rn between ? and ?";
+		String scriptSQL = "select * from PRODUTOS order by id_pk offset ? limit ?";
+ 
+
 		PreparedStatement executor;
 		ResultSet res;
 
@@ -70,7 +70,7 @@ public class ProdutosDAOImpl implements ProdutosDAO {
 			executor = conexao.prepareStatement(scriptSQL);
 
 			executor.setInt(1, (page * 9) - 8);
-			executor.setInt(2, (page * 9));
+			executor.setInt(2, 9);
 
 			res = executor.executeQuery();
 
@@ -121,16 +121,14 @@ public class ProdutosDAOImpl implements ProdutosDAO {
 	public boolean initializeConnection() {
 
 		try {
-			String driverName = "oracle.jdbc.driver.OracleDriver";
+
+			String url = "jdbc:postgresql://localhost:5432/main";
+			String username = "jslessons";
+			String password = "jslessons";
+
+			String driverName = "org.postgresql.Driver";
 			Class.forName(driverName);
-
-			String url = "jdbc:oracle:thin:@localhost:1521:XE";
-			String username = "xfood";
-			String password = "xfood";
-
-			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conexao = DriverManager.getConnection(url, username, password);
-
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			return false;
