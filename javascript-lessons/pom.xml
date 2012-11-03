@@ -68,7 +68,7 @@
 					<dependency>
 						<groupId>postgresql</groupId>
 						<artifactId>postgresql</artifactId>
-						<version>8.4-702.jdbc4</version>
+						<version>${postgres.version}</version>
 					</dependency>
 				</dependencies>
 
@@ -118,7 +118,7 @@
 		<dependency>
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>8.4-702.jdbc4</version>
+			<version>${postgres.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -138,6 +138,7 @@
 	</dependencies>
 
 	<properties>
+		<postgres.version>9.1-901-1.jdbc4</postgres.version>
 		<jersey.version>1.13-b01</jersey.version>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 	</properties>
