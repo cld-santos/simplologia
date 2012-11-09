@@ -18,24 +18,31 @@ define(['jquery', 'underscore', 'backbone','esri/Map','esri/layers/FeatureLayer'
 	            map.graphics.enableMouseEvents();
 	            dojo.connect(map.graphics,"onMouseOut",function(){
 	            	map.graphics.clear();
-	            });        
+	            });
+		        dojo.connect(map.graphics, "onClick", function(evt) {
+		        	var stateExtent = evt.graphic.geometry.getExtent().expand(1.5);
+		            map.setExtent(stateExtent);
+		        });
+
 	        });
 	          
-	        var southCarolinaCounties = new esri.layers.FeatureLayer("http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/5", {
-	            mode: esri.layers.FeatureLayer.MODE_ONDEMAND,
-	            outFields: ["NAME"]
+	        var USstates = new esri.layers.FeatureLayer("http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/5", {
+	            mode: esri.layers.FeatureLayer.MODE_ONDEMAND
 	        });
 	
 	        var symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255,255,255,0.35]), 1),new dojo.Color([125,125,125,0.35]));
-	        southCarolinaCounties.setRenderer(new esri.renderer.SimpleRenderer(symbol));
-	        map.addLayer(southCarolinaCounties);
+	        USstates.setRenderer(new esri.renderer.SimpleRenderer(symbol));
 	
 	        var highlightSymbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255,0,0]), 3), new dojo.Color([125,125,125,0.35]));
 	
-	        dojo.connect(southCarolinaCounties, "onMouseOver", function(evt) {
+	        dojo.connect(USstates, "onMouseOver", function(evt) {
 	        	var highlightGraphic = new esri.Graphic(evt.graphic.geometry,highlightSymbol);
 	        	map.graphics.add(highlightGraphic);
 	        });
+
+
+	        map.addLayer(USstates);
+	        
     	}
     });
 });
