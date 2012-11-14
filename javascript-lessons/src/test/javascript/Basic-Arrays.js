@@ -46,19 +46,19 @@ describe("Conceitos Básicos de Arrays", function (){
 
 	it("deve criar uma lista de Objetos", function(){
 		var colecao = new Array();
+		
 		for ( var int = 0; int < 10; int++) {
 			var objeto = new Objetao();
 			objeto.SetarCor("Amarelo "+int);
 			colecao.push(objeto);
-		}
-		expect(colecao.length).toEqual(10);
-		for ( var int = 0; int < 10; int++) {
-			objeto.SetarCor("Amarelo "+int);
-			expect(colecao[int].ObterCor()).toEqual("Amarelo "+int);
-			
-		}
+		};
 		
+		expect(colecao.length).toEqual(10);
+		
+		for ( var int = 0; int < 10; int++) {
+			objeto.SetarCor("Amarelo " + int);
+			expect(colecao[int].ObterCor()).toEqual("Amarelo " + int);			
+		};		
 		
 	});
-	
 });

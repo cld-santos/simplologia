@@ -26,56 +26,38 @@ import java.io.IOException;
 /**
  * Goal which touches a timestamp file.
  *
- * @goal touch
+ * @goal publish
  * 
  * @phase process-sources
  */
-public class MyMojo
-    extends AbstractMojo
+public class GisServerPublisher extends AbstractMojo
 {
     /**
      * Location of the file.
-     * @parameter expression="${project.build.directory}"
+     * @parameter expression="${project.build.urlServer}"
      * @required
      */
-    private File outputDirectory;
+    private String urlServer;
 
-    public void execute()
-        throws MojoExecutionException
+    /**
+     * Location of the file.
+     * @parameter expression="${project.build.jsonServicePath}"
+     * @required
+     */
+    private String jsonServicePath;
+    
+    /**
+     * Location of the file.
+     * @parameter expression="${project.build.tokenService}"
+     * @required
+     */
+    private String tokenService;
+    
+    
+    public void execute() throws MojoExecutionException
     {
-        File f = outputDirectory;
-
-        if ( !f.exists() )
-        {
-            f.mkdirs();
-        }
-
-        File touch = new File( f, "touch.txt" );
-
-        FileWriter w = null;
-        try
-        {
-            w = new FileWriter( touch );
-
-            w.write( "touch.txt" );
-        }
-        catch ( IOException e )
-        {
-            throw new MojoExecutionException( "Error creating file " + touch, e );
-        }
-        finally
-        {
-            if ( w != null )
-            {
-                try
-                {
-                    w.close();
-                }
-                catch ( IOException e )
-                {
-                    // ignore
-                }
-            }
-        }
+    	CreateMapService oCriador = new CreateMapService();
+    	getLog().info( oCriador.publish(urlServer, jsonServicePath, tokenService) );   	
+  	
     }
 }

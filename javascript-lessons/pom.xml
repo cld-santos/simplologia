@@ -13,7 +13,7 @@
 		<finalName>javascript-lessons</finalName>
 		<plugins>
 
-			<plugin>
+			<!--<plugin>
 				<groupId>com.github.searls</groupId>
 				<artifactId>jasmine-maven-plugin</artifactId>
 				<version>1.2.0.0</version>
@@ -38,7 +38,7 @@
 						<source>src/main/webapp/js/view/Usuarios.js</source>
 						<source>src/main/webapp/js/Roteador.js</source>
 
-						<!-- <source>src/main/webapp/js/utils.js</source> <source>src/main/webapp/js/Main.js</source> -->
+						<source>src/main/webapp/js/utils.js</source> <source>src/main/webapp/js/Main.js</source>
 
 					</preloadSources>
 
@@ -47,24 +47,14 @@
 			</plugin>
 
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<inherited>true</inherited>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
 
+			
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>sql-maven-plugin</artifactId>
 				<version>1.5</version>
 
 				<dependencies>
-					<!-- specify the dependent jdbc driver here -->
 					<dependency>
 						<groupId>postgresql</groupId>
 						<artifactId>postgresql</artifactId>
@@ -72,7 +62,6 @@
 					</dependency>
 				</dependencies>
 
-				<!-- common configuration shared by all executions -->
 				<configuration>
 					<driver>org.postgresql.Driver</driver>
 					<url>jdbc:postgresql://localhost:5432/main</url>
@@ -97,7 +86,39 @@
 					</execution>
 
 				</executions>
+			</plugin>-->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<inherited>true</inherited>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>br.cld.simplologia</groupId>
+				<artifactId>geo-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+
+				<configuration>
+					<urlServer>192.213.102.115:6080</urlServer>
+					<jsonServicePath>\src\MapService\createService.json</jsonServicePath>
+					<tokenService>J-vr0oR_UMmetP8oOQp0INZRtpUgUPo8zRAnA2ihlnEltgBXvi4F3chupKk5fDFI</tokenService>
+					
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>publish</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>	
 
 		</plugins>
 	</build>
@@ -132,7 +153,11 @@
 			<version>${jersey.version}</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>br.cld.simplologia</groupId>
+			<artifactId>geo-plugin</artifactId>
+			<version>1.0-SNAPSHOT</version>
+        </dependency>
 		<!-- <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> 
 			<version>11.2.0.3</version> </dependency> -->
 	</dependencies>

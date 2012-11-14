@@ -7,6 +7,19 @@
   <version>1.0-SNAPSHOT</version>
   <name>geo-plugin Maven Mojo</name>
   <url>http://maven.apache.org</url>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-plugin-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <goalPrefix>geo</goalPrefix>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
