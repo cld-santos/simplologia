@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -13,7 +13,7 @@
 		<finalName>javascript-lessons</finalName>
 		<plugins>
 
-			<!--<plugin>
+			<plugin>
 				<groupId>com.github.searls</groupId>
 				<artifactId>jasmine-maven-plugin</artifactId>
 				<version>1.2.0.0</version>
@@ -86,7 +86,7 @@
 					</execution>
 
 				</executions>
-			</plugin>-->
+			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -107,7 +107,8 @@
 				<configuration>
 					<urlServer>192.213.102.115:6080</urlServer>
 					<jsonServicePath>\src\MapService\createService.json</jsonServicePath>
-					<tokenService>J-vr0oR_UMmetP8oOQp0INZRtpUgUPo8zRAnA2ihlnEltgBXvi4F3chupKk5fDFI</tokenService>
+					<!--<tokenService>J-vr0oR_UMmetP8oOQp0INZRtpUgUPo8zRAnA2ihlnEltgBXvi4F3chupKk5fDFI</tokenService>-->
+					<tokenService>6UJvmcmswCNkLtBF0urU1YwdiDuaflu0eanTtS8V_zerKGpj9HkcmhoTXX51nVTx</tokenService>
 					
 				</configuration>
 				<executions>
