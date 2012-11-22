@@ -8,7 +8,7 @@ window.Roteador = Backbone.Router.extend({
 	index : function() {
 
 		this.produto = new Produto();
-
+		
 		this.produto.fetch({
 			data : {
 				pagina : 1

@@ -1,4 +1,18 @@
 describe("Conceitos Básicos de Arrays", function (){
+
+	function Objetao(){
+		
+		var _cor="";
+		
+		this.ObterCor = function(){
+			return _cor;
+		}
+		
+		this.SetarCor = function(value){
+			_cor = value;
+		} 
+	}
+	
 	var lista = [1,2,3,4,5,6,7,8,9];
 
 	it("deve armazenar uma lista de valores crescente.", function(){
@@ -29,5 +43,22 @@ describe("Conceitos Básicos de Arrays", function (){
 		listaDesordenada.sort();
 		expect(listaDesordenada.toString()).toEqual(lista.toString());		
 	});
-	
+
+	it("deve criar uma lista de Objetos", function(){
+		var colecao = new Array();
+		
+		for ( var int = 0; int < 10; int++) {
+			var objeto = new Objetao();
+			objeto.SetarCor("Amarelo "+int);
+			colecao.push(objeto);
+		};
+		
+		expect(colecao.length).toEqual(10);
+		
+		for ( var int = 0; int < 10; int++) {
+			objeto.SetarCor("Amarelo " + int);
+			expect(colecao[int].ObterCor()).toEqual("Amarelo " + int);			
+		};		
+		
+	});
 });

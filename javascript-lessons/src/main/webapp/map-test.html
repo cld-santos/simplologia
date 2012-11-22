@@ -1,68 +1,67 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9" />
-<!--The viewport meta tag is used to improve the presentation and behavior of the samples on iOS devices-->
-<meta name="viewport"	content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-<title>World Street Map</title>
-<link rel="stylesheet" type="text/css" 	href="./js/lib/esri/js/dojo/dijit/themes/claro/claro.css">
-<style>
-html,body {
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Geotur</title>
+    
+        <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.2/js/esri/css/esri.css" />
+        <link rel="stylesheet" type="text/css" href="./style/geotur.css"/> 
+    </head>
+    
+    <body>
+    
+        <div id="topo"> </div>
 
-#map {
-	padding: 0;
-}
-</style>
-<script type="text/javascript">
-	var djConfig = {
-		parseOnLoad : true
-	};
-</script>
-<script type="text/javascript"
-	src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.1"></script> <!--src="./js/lib/esri/init.js"  -->
-<script type="text/javascript">
-	dojo.require("esri.map");
+    	<div id="corpo">
+    		<div id="map"> </div>
+    		<div id="conteudo"> </div>
+    	</div>
 
-	var map;
+        <div id="rodape"> </div>
+    	
+		<script type="text/javascript">
+			var dojoConfig = { 
+				async: true,
+				parseOnLoad: true,
+			    packages: [{
+			    	"name": "jquery",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/lib/jquery",
+			        "main": "jquery-1.7.1"
+			    },{
+			    	"name": "underscore",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/lib/underscore",
+			        "main": "underscore"
+			    },{
+			    	"name": "backbone",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/lib/backbone",
+			        "main": "backbone-0.9.2"
+			    },{
+			    	"name": "view",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/view"
+			    },{
+			    	"name": "route",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/route",
+			        "main": "Roteador"
+			    }]
+			};
+		</script>
+		<script type="text/javascript"	src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.2compact"></script>
+		
+		<script type="text/javascript">
+			define.amd.jQuery = true;
 
-	function init() {
-		var initExtent = new esri.geometry.Extent({
-			"xmin" : -17731,
-			"ymin" : 6710077,
-			"xmax" : -12495,
-			"ymax" : 6712279,
-			"spatialReference" : {
-				"wkid" : 102100
-			}
-		});
-		map = new esri.Map("map", {
-			extent : initExtent
-		});
+			require([ 'jquery',
+			          'underscore',
+			          'backbone',
+			          'route'      ], 
+				function( $, _, Backbone, router)
+				{
+					var appRoteador = new router();
+					Backbone.history.start();				
+				}
+			);
+		</script>
 
-		//Add the world street map layer to the map. View the ArcGIS Online site for services http://arcgisonline/home/search.html?t=content&f=typekeywords:service    
-		var basemap = new esri.layers.ArcGISTiledMapServiceLayer(
-				"http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer");
-			map.addLayer(basemap);
-
-		dojo.connect(map, 'onLoad', function(theMap) {
-			//resize the map when the browser resizes
-			dojo.connect(dijit.byId('map'), 'resize', map, map.resize);
-		});
-	}
-	dojo.addOnLoad(init);
-</script>
-</head>
-
-<body class="claro">
-	<div style="width: 100%; height: 100%; margin: 0;"> 	<!-- dojotype="dijit.layout.BorderContainer" -->
-		<div id="map" style="overflow: hidden;"></div> 	<!-- dojotype="dijit.layout.ContentPane"  -->
-	</div>
-</body>
+    </body>
 
 </html>
