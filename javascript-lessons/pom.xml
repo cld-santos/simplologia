@@ -1,4 +1,4 @@
-project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -38,7 +38,8 @@ project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2
 						<source>src/main/webapp/js/view/Usuarios.js</source>
 						<source>src/main/webapp/js/Roteador.js</source>
 
-						<source>src/main/webapp/js/utils.js</source> <source>src/main/webapp/js/Main.js</source>
+						<!--<source>src/main/webapp/js/utils.js</source> 
+						<source>src/main/webapp/js/Main.js</source>-->
 
 					</preloadSources>
 
@@ -73,7 +74,7 @@ project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2
 
 					<execution>
 						<id>create-schema</id>
-						<phase>process-test-resources</phase>
+						<phase>deploy</phase>
 						<goals>
 							<goal>execute</goal>
 						</goals>
@@ -113,7 +114,7 @@ project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2
 				</configuration>
 				<executions>
 					<execution>
-						<phase>compile</phase>
+						<phase>deploy</phase>
 						<goals>
 							<goal>publish</goal>
 						</goals>
