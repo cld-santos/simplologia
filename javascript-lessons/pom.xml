@@ -74,7 +74,7 @@
 
 					<execution>
 						<id>create-schema</id>
-						<phase>deploy</phase>
+						<phase>install</phase>
 						<goals>
 							<goal>execute</goal>
 						</goals>
