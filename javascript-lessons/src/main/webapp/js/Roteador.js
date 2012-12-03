@@ -4,7 +4,6 @@ window.Roteador = Backbone.Router.extend({
 		"" : "index",
 		"produtos/:id" : "listar"
 	},
-
 	index : function() {
 
 		this.produto = new Produto();
