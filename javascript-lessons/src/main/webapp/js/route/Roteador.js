@@ -1,4 +1,3 @@
-
 define(['jquery','underscore','backbone','view/MapView'], 
 		function( $, _, Backbone, MapView) {
 	var router;
