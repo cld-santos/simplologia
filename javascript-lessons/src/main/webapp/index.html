@@ -1,28 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-	
-	<head>
-	  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	  <title>Produtos</title>
-	  <link rel="stylesheet" type="text/css" href="./style/principal.css">
-	</head>
-	
-	<body>
-		<div id="topo">			</div>
-		<div id="corpo">		</div>
-		<div id="rodape">		</div>	
-		
-		<div id="mensagens">	</div>
-	</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Geotur</title>
+    
+        <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.2/js/esri/css/esri.css" />
+        <link rel="stylesheet" type="text/css" href="./style/geotur.css"/> 
+    </head>
+    
+    <body>
+    
+        <div id="topo">
+        	<img src="./img/main-banner.png"/>        	 
+       	</div>
 
-	<script type="text/javascript" src="./js/lib/jquery-1.7.1.js" ></script>
-	<script type="text/javascript" src="./js/lib/underscore.js"></script>
-	<script type="text/javascript" src="./js/lib/backbone-0.9.2.js" ></script>
-	<script type="text/javascript" src="./js/model/Produto.js" ></script>
-	<script type="text/javascript" src="./js/model/Usuario.js" ></script>
-	<script type="text/javascript" src="./js/view/Produtos.js" ></script>
-	<script type="text/javascript" src="./js/view/Usuarios.js" ></script>
-	<script type="text/javascript" src="./js/Roteador.js" ></script>
-	<script type="text/javascript" src="./js/utils.js" ></script>
-	<script type="text/javascript" src="./js/Main.js" ></script>
-	
+    	<div id="corpo">
+    		<div id="map"> </div>
+    		<div id="conteudo"> </div>
+    	</div>
+
+        <div id="rodape"> </div>
+    	
+		<script type="text/javascript">
+			var dojoConfig = { 
+				async: true,
+				parseOnLoad: true,
+			    packages: [{
+			    	"name": "jquery",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/lib/jquery",
+			        "main": "jquery-1.7.1"
+			    },{
+			    	"name": "underscore",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/lib/underscore",
+			        "main": "underscore"
+			    },{
+			    	"name": "backbone",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/lib/backbone",
+			        "main": "backbone-0.9.2"
+			    },{
+			    	"name": "view",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/view"
+			    },{
+			    	"name": "route",
+			        "location": location.pathname.replace(/\/[^/]+$/, "") + "/js/route",
+			        "main": "Roteador"
+			    }]
+			};
+		</script>
+		<script type="text/javascript"	src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.2compact"></script>
+		
+		<script type="text/javascript">
+			define.amd.jQuery = true;
+
+			require([ 'jquery',
+			          'underscore',
+			          'backbone',
+			          'route'      ], 
+				function( $, _, Backbone, router)
+				{
+					window.appRoteador = new router();
+					Backbone.history.start();//{pushState: true, root: "/javascript-lessons/"});				
+				}
+			);
+		</script>
+
+    </body>
+
 </html>

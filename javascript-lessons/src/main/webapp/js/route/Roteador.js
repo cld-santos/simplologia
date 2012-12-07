@@ -3,14 +3,16 @@ define(['jquery','underscore','backbone','view/MapView'],
 		function( $, _, Backbone, MapView) {
 	var router;
 	return router = Backbone.Router.extend({
-	
 		routes : {
 			"" : "index",
-			"produtos/:id" : "listar"
+			"produtos/:id" : "listar",
+			"area/:nomeDaArea" : "zoomNaArea"
 		},
 	
 		index : function() {
-			var mapa = new MapView();
+			if(!window.mapa){
+				window.mapa = new MapView();
+			}
 			$('#corpo').html(mapa.render());
 		},
 	
@@ -31,7 +33,15 @@ define(['jquery','underscore','backbone','view/MapView'],
 					);
 				}
 			});
+		},		
+		zoomNaArea: function(nomeDaArea){
+			nomeDaArea = nomeDaArea.replace('-',' ');
+			if(!window.mapa){
+				this.index();
+			}
+			
+			dojo.connect(window.map,"onUpdateEnd",window.mapa.zoomPorArea(nomeDaArea));
+						
 		}
 	});
-
 });
