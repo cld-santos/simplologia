@@ -88,7 +88,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 @media screen and (min-width:616px) and (max-width:800px) {
 	#header, #topnav, #intro, #container, #footer, #copyright{max-width:95%; margin:0 auto;}
-	
+	#intro{padding:100px; height: 250px;}
 	#topnav ul{display:none;}
 	form input[type="submit"]{margin-bottom:10px;}
 	
@@ -105,12 +105,16 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 @media screen and (min-width:960px) {
 	#header, #topnav, #intro, #container, #footer, #copyright{max-width:95%; margin:0 auto;}
+	#intro{padding:100px; height: 250px;}
+
 }
 
 /* 1028px */
 
 @media screen and (min-width:1028px) {
 	#header, #topnav, #intro, #container, #footer, #copyright{max-width:95%; margin:0 auto;}
+	#intro{padding:100px; height: 250px;}
+
 }
 
 /* 1200px */
@@ -118,6 +122,8 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 @media screen and (min-width:1200px) {
 	body.boxed .wrapper{max-width:1140px;}
 	#header, #topnav, #intro, #container, #footer, #copyright, .stretched{max-width:1200px; margin:0 auto;}
+	#intro{padding:100px; height: 250px;}
+
 }
 
 /* Hide The Jquery Generated Navigation Form from 801px upwards */
