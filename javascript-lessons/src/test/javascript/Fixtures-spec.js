@@ -1,4 +1,4 @@
-/*describe("Conceitos de fixtures", function() {
+describe("Conceitos de fixtures", function() {
 	jasmine.getFixtures().fixturesPath = '../javascript-lessons/tpl/';
 
 	SearchView = Backbone.View.extend({
@@ -87,4 +87,3 @@
 		expect(search_view.doCancel).toHaveBeenCalled();
 	});
 });
-*/

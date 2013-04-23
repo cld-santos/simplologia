@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<servlet>
-		<servlet-name>Simplologia WebFood</servlet-name>
+		<servlet-name>Simplologia</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
@@ -18,7 +18,7 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>Simplologia WebFood</servlet-name>
+		<servlet-name>Simplologia</servlet-name>
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
 

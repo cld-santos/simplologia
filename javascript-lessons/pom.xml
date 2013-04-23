@@ -46,11 +46,8 @@
 					<browserVersion>FIREFOX_3</browserVersion>
 				</configuration>
 			</plugin>
-
-
-
 			
-			<plugin>
+			<!--<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>sql-maven-plugin</artifactId>
 				<version>1.5</version>
@@ -92,8 +89,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<inherited>true</inherited>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
@@ -108,7 +103,7 @@
 				<configuration>
 					<urlServer>192.213.102.115:6080</urlServer>
 					<jsonServicePath>\src\MapService\createService.json</jsonServicePath>
-					<!--<tokenService>J-vr0oR_UMmetP8oOQp0INZRtpUgUPo8zRAnA2ihlnEltgBXvi4F3chupKk5fDFI</tokenService>-->
+					<tokenService>J-vr0oR_UMmetP8oOQp0INZRtpUgUPo8zRAnA2ihlnEltgBXvi4F3chupKk5fDFI</tokenService>
 					<tokenService>6UJvmcmswCNkLtBF0urU1YwdiDuaflu0eanTtS8V_zerKGpj9HkcmhoTXX51nVTx</tokenService>
 					
 				</configuration>
@@ -120,7 +115,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>	
+			</plugin>-->	
 
 		</plugins>
 	</build>
@@ -134,9 +129,13 @@
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-json</artifactId>
 			<version>${jersey.version}</version>
-
 		</dependency>
 		<dependency>
 			<groupId>postgresql</groupId>
@@ -150,12 +149,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>${jersey.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>br.cld.simplologia</groupId>
 			<artifactId>geo-plugin</artifactId>
 			<version>1.0-SNAPSHOT</version>
@@ -166,7 +159,7 @@
 
 	<properties>
 		<postgres.version>9.1-901-1.jdbc4</postgres.version>
-		<jersey.version>1.13-b01</jersey.version>
+		<jersey.version>1.12</jersey.version>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 	</properties>
 </project>

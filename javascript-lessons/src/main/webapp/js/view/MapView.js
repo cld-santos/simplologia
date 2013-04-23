@@ -49,7 +49,9 @@ define(
 		        	map.graphics.add(highlightGraphic);
 		        });	
 		        dojo.connect(estados, "onSelectionComplete", function(features){
-		        	window.appRoteador.navigate("area/"+features[0].attributes.NM_NNG,{trigger: true})		        	
+		        	window.appRoteador.navigate("area/"+features[0].attributes.NM_NNG,{trigger: false});
+		        	var stateExtent = features[0].geometry.getExtent().expand(1.5);
+		            window.map.setExtent(stateExtent);
 		        });
 		        
 		        map.addLayer(estados);

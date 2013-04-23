@@ -33,7 +33,7 @@ public class Produto {
 			listaDeProdutos.setProdutos(produtos.findByPage(pagina));
 			listaDeProdutos.setTotal(produtos.getTotal());
 		} catch (Exception e) {
-			//TODO: Pensar no tratamento de exceções;
+			
 		} finally {
 			produtos.closeConnection();
 		}
