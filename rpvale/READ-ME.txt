@@ -1,0 +1,19 @@
+
+If you would like to use the template in a "Boxed" version (centered not full width), read the following.
+
+In each page that can be found within the download package the <body> tag has an empty "class" placeholder (other than empty index.html pages)
+
+To enable the boxed version simply add "boxed" inside the inverted brackets e.g.
+
+<body class="">
+
+needs to be changed to:
+
+<body class="boxed">
+
+Once changed simply clear your browser cache and refresh the page.
+
+You will now have a boxed version with a black background to the left and right of the layout.
+
+To ensure that you have a boxed layout and that no mistake was made, open the modified page in a large monitor, if the colours of the 
+top bar, navigation, content area and footer still span the complete width of the screen, something has gone wrong.
