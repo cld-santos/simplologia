@@ -1,4 +1,4 @@
-drop table produtos;
+--drop table produtos;
 create table PRODUTOS (
 	ID_PK INTEGER,
 	NOME VARCHAR(50),
