@@ -1,0 +1,34 @@
+{
+	"notes":[
+		{
+			"type": "informacao",
+			"note":"Modelo Hierarquico no CouchDB",
+			"user":"csantos"
+		},{
+			"type": "duvida",
+			"note":"Testando com modelo AMD",
+			"user":"csantos"
+		},{
+			"type": "ideia",
+			"note":"cnaps : Base de Conhecimento + anotações",
+			"user":"csantos"
+		},{
+			"type": "informacao",
+			"note":"Modelo Restful do twitter",
+			"user":"csantos"
+		},{
+			"type": "problema",
+			"note":"CSS é bruxaria",
+			"user":"csantos"
+		},{
+			"type": "informacao",
+			"note":"underscore aumenta a organização",
+			"user":"csantos"
+		},{
+			"type": "atencao",
+			"note":"Utilização de ArcObjects",
+			"user":"csantos"
+		}
+	]
+
+}

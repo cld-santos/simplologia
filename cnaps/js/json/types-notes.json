@@ -1,0 +1,29 @@
+{
+	"types" : [
+		{
+			"id":0,
+			"name":"informacao",
+			"enable":true
+		},
+		{
+			"id":1,
+			"name":"ideia",
+			"enable":true
+		},
+		{
+			"id":2,
+			"name":"atencao",
+			"enable":true
+		},
+		{
+			"id":3,
+			"name":"problema",
+			"enable":true
+		},
+		{
+			"id":4,
+			"name":"duvida",
+			"enable":true
+		}
+	] 
+}
